@@ -5,6 +5,7 @@
  */
 class Solution {
     public int countPrimes(int n) {
+<<<<<<< HEAD
         if (n <= 2) {
             return 0;
         }
@@ -21,6 +22,9 @@ class Solution {
         return count;
 
 
+=======
+        
+>>>>>>> 6a6d81dc479e8370c039d44d3a1259aa4817c208
     }
 }
 

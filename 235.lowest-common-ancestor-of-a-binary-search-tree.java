@@ -14,6 +14,7 @@
  */
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+<<<<<<< HEAD
         if (root == null || p == null || q == null) {
            return root;
         }
@@ -36,6 +37,9 @@ class Solution {
         } else {
             return root;
         }*/
+=======
+        
+>>>>>>> 6a6d81dc479e8370c039d44d3a1259aa4817c208
     }
 }
 

@@ -5,6 +5,7 @@
  */
 class Solution {
     public void rotate(int[][] matrix) {
+<<<<<<< HEAD
         final int n = matrix.length;
         //first, flip up-down
         for (int i = 0; i < n/2; i++) {
@@ -20,6 +21,9 @@ class Solution {
                 matrix[k][j] = temp;
             }
         }
+=======
+        
+>>>>>>> 6a6d81dc479e8370c039d44d3a1259aa4817c208
     }
 }
 
