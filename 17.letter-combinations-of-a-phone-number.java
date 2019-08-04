@@ -7,22 +7,20 @@ class Solution {
     public List<String> letterCombinations(String digits) {
         String digitLetter[] = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
         List<String> combos = new ArrayList<String>();
-        
-        if (digits.length()==0) return combos;
-
-        combos.add("");
-        for (int i = 0; i < digits.length(); i++) {
-            combos = combine(digitLetter[digits.charAt(i) - '0'], combos);
+        if (digits.length() == 0) {
+            return combos;
         }
+        combine(combos, digitLetter, "", digits);
         return combos;
     }
-    public List<String> combine(String digit, List<String> currCombos) {
-        List<String> newCombos = new ArrayList<>();
-        for (int i = 0; i < digit.length(); i++) {
-            for (String s : currCombos) {
-                newCombos.add(s+digit.charAt(i));
-            }
+    public void combine(List<String> combos, String[] digitLetter, String soFar, String digitsLeft) {
+        if (digitsLeft == "" || digitsLeft.length() == 0) {
+            combos.add(soFar);
+            return;
         }
-        return newCombos;
+        String possibles = digitLetter[digitsLeft.charAt(0) - '0'];
+        for (int i = 0; i < possibles.length(); i++) {
+            combine(combos, digitLetter, soFar + Character.toString(possibles.charAt(i)), digitsLeft.substring(1, digitsLeft.length()));
+        }
     }
 }
