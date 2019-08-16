@@ -7,16 +7,22 @@ import java.util.ArrayList;
  */
 class Solution {
     public void rotate(int[] nums, int k) {
-        //brute force arraylist
-        ArrayList<Integer> n = new ArrayList<>();
-        for (int i = nums.length - k; i < nums.length; i++) {
-            n.add(nums[i]);
+        k %= nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k-1);
+        reverse(nums, k, nums.length - 1);
+    }
+
+    public void reverse(int[] nums, int start, int end) {
+        if (start < 0 || end >= nums.length) {
+            return;
         }
-        for (int j = nums.length - k; j < nums.length; j++) {
-            nums[j] = nums[nums.length - k - j];
-        }
-        for (int m = 0; m < k; m++) {
-            nums[m] = n.remove(0);
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
         }
     }
 }
